@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model User
+@{
+    <form asp-action="Add" asp-controller="User">
+       <label asp-for="@Model.Name"></label>
+       <label asp-for="@Model.Surname"></label>
+    </form>
+
+    
+     @using (Html.BeginForm("AddUser", "Home", FormMethod.Post))
+      {
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th colspan="2" align="center">Person Details</th>
+            </tr>
+            <tr>
+                <td>Name: </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Name)
+                </td>
+            </tr>
+           
+
+            <tr>
+                <td>Surname: </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Surname)
+                </td>
+            </tr>
+           
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Submit"/></td>
+            </tr>
+        </table>
+    }
+}
+
